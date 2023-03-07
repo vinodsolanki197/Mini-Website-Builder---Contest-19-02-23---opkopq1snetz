@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import '../styles/App.css';
 const App = () => {
-  const[charLimit,setCharLimit] = useState(32);
+  const[charLimit,setCharLimit] = useState(50);
   const[inputText,setInputText] = useState("I change");
   const[color,setColor] = useState("black");
-  const[padding,setPadding] = useState(10);
+  const[padding,setPadding] = useState(32);
 
   return (
+    <form>
     <div id="main">
       Char Limit:-{" "}
       <input type="number" id="charlimit-input" defaultValue={charLimit} onChange={(e) =>{
@@ -27,7 +28,8 @@ const App = () => {
      min={1}
      max={32}
      />
-     <div id="changing-div" style={{
+     <div id="changing-div" 
+     style={{
       backgroundColor:color,
       color:"white",
       padding:padding,
@@ -38,7 +40,7 @@ const App = () => {
       </div>
 
     </div>
-    
+    </form>
   );
 };
 
